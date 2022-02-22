@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+         <link rel="shortcut icon" href="usericon.png">
+        <title>nonmle</title>
+    </head>
+    <body>
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="https://gohue.github.io/info" class="nav__logo">nonmle</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__close">
+                        <ion-icon name="close-outline" class="nav__close-icon" id="nav-close"></ion-icon>
+                    </div>
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="https://gohue.github.io/info/" class="nav__link" target="">Home</a></li>
+                        <li class="nav__item"><a href="https://twitter.com/nonmlle" class="nav__link" target="blank">Twitter</a></li>
+                        <li class="nav__item"><a href="https://www.instagram.com/nonmle" class="nav__link" target="blank">Instagram</a></li>
+                      <!--  <li class="nav__item"><a href="#" class="nav__link" target="blank">Facebook</a></li>-->
+                        <li class="nav__item"><a href="/nonmle-contact.html" class="nav__link" target="blank">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main bd-grid">
+            <div class="home">
+                <h1 class="home__title">I´M A <br> RANDOM <br> PICTURES</h1>
+
+                <div class="home__img">
+                    <!-- Parar ver el efecto de hover effect abra la pagina web en localhost -->
+                </div>
+
+                <div class="home__social">
+                    <a href="https://twitter.com/nonmlle" class="home__social-link">Twitter</a>
+                    <a href="https://www.instagram.com/nonmle" class="home__social-link">Instagram</a>
+                    <a href="/New.css" class="home__social-link">Contact</a>
+                </div>
+
+                <h2 class="home__subtitle">COPYRIGHT ©<br>2022, <br>nonmle</h2>
+
+                <a href="/New.css" class="home__button">Contact <ion-icon name="arrow-forward-outline" class="home__button-icon"></ion-icon></a>
+
+            </div>
+        </main>
+
+        <!-- MAIN -->
+        <script src="main.js"></script>
+
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+
+        <!-- THREE JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
+         integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY=" crossorigin="anonymous"></script>
+
+        <!-- HOVER-EFFECT JS -->
+        <script src="hover-effect.umd.js"></script>
+        
+         <!-- ICONOS -->
+        <script  type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    
+        <script>
+            new hoverEffect({
+                parent: document.querySelector('.home__img'),
+                intensity: 0.3,
+                image1: 'https://source.unsplash.com/450x300/?posters',
+                image2: 'https://source.unsplash.com/450x300/?random',
+                displacementImage: 'assets/img/diss.png',
+                imagesRatio: 450 / 300
+            })
+
+            /* NAV, TITLE Y IMG y*/
+            gsap.from('.nav', {opacity: 0, duration: 1, delay:1, y: -30})
+            gsap.from('.home__title', {opacity: 0, duration: 1.2, delay:1.2, y: -30})
+            gsap.from('.home__img', {opacity: 0, duration: 1.3, delay:1.3, y: -50})
+
+            /*SOCIAL, SUBTITLE Y BUTTON*/
+            gsap.from('.home__social', {opacity: 0, duration: 1, delay:1.5, y: 50})
+            gsap.from('.home__subtitle', {opacity: 0, duration: 1, delay: 1.8, y: 50})
+            gsap.from('.home__button', {opacity: 0, duration: 1, delay:2, y: 50})
+        </script>
+    </body>
+</html>
